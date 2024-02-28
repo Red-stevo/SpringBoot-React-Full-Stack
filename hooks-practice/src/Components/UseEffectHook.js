@@ -8,7 +8,7 @@ const UseEffectHook = () =>{
     const form = fieldNames.map(
         (field, key) => {
             return(
-                <div>
+                <div key={key}>
                     {field === "text-input" && <TextInput />}
                     {field === "choice-input" && <ChoiceInput />}
                 </div>
