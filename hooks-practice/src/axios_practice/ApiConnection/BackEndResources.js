@@ -8,23 +8,34 @@ const openApi = axios.create({
 export async  function register(userName, password , email){
     const formData = new FormData();
 
-    formData.append("userName",userName);
+   /* formData.append("username",userName);
     formData.append("password",password);
-    formData.append("email",email);
+    formData.append("email",email);*/
+
 
     const response = await openApi.post("/api/v0/register",formData);
-
+    console.log(response.data, response.headers)
     return response.status === 201;
 }
 
 /*connection with login api to the password manager backend*/
-export async function login(username, password){
-    const  loginData = new FormData();
+let response;
+response.data.jwtToken = "";
 
-    loginData.append("username", username);
-    loginData.append("password", password);
+export async function login(userName, password) {
+    //const  loginData = new FormData();
 
-    const response = await  openApi.post("/api/v0/login",loginData)
+    /*loginData.append("username", username);
+    loginData.append("password", password);*/
 
-    return response.status === 200;
+    const loginModel = {
+        username: userName,
+        password: password
+    }
+    try {
+        const response = await openApi.post("/api/v0/login", loginModel)
+        console.log(response.data.jwtToken)
+    } catch (error) {
+        console.error(error)
+    }
 }
