@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const openApi = axios.create({
-    baseURL : "http://172.16.107.233:8080"
+    baseURL : "http://192.168.0.141:8080"
 })
 
 /*This function will allow us to register a new user to the database.*/

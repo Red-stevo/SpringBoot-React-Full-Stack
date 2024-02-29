@@ -1,12 +1,13 @@
 import './App.css';
-import UseEffectHook from "./Components/UseEffectHook";
+
+import LoginPage from "./axios_practice/pages/LoginPage";
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-            <UseEffectHook />
+            <LoginPage />
       </header>
     </div>
   );
