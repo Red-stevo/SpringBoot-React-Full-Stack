@@ -9,13 +9,13 @@ const ChoiceInput = () =>{
             <label></label>
             <input type={"checkbox"} onInput={ () =>{
                 if(value === "off")
-                    setValue("on")
+                    setValue("on");
                 else
-                    setValue("off")
+                    setValue("off");
 
                 console.log(value);
             }}/>
-        </>)
+        </>);
 }
 
 export default ChoiceInput;
